@@ -1,0 +1,31 @@
+.container {
+    max-width: 128rem;
+    padding: 0 1.5rem;
+    margin: auto;
+
+}
+
+.container--header {
+    min-height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.container--footer {
+    width: 100%;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .container--header {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+}

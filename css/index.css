@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap");
+.container {
+  max-width: 128rem;
+  padding: 0 1.5rem;
+  margin: auto;
+}
+
+.container--header {
+  min-height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container--footer {
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .container--header {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+}
+.header {
+  border-bottom: 0.5rem solid rgb(255, 94, 0);
+  padding: 2rem 0;
+}
+
+.fa-camera {
+  font-size: 5rem;
+  padding-right: 2rem;
+  color: #ff5e00;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+  background: #ff5e00;
+  /* .footer__link */
+}
+.footer__link {
+  display: block;
+  width: 50%;
+  flex: 0 0 1.5rem;
+}
+.footer__logo {
+  width: 10rem;
+}
+.footer .copy-right {
+  width: 50%;
+  font-size: 1.5rem;
+  flex: 0 0 28rem;
+  color: #dddddd;
+}
+.footer .developer {
+  padding: 0 0 0 2rem;
+  font-family: "Pacifico", cursive;
+  font-size: 1.8rem;
+  color: #dddddd;
+  transition: all 1s linear;
+}
+.footer .developer:hover {
+  color: #5CC3D8;
+}
+.footer .developer:visited {
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 10px;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.header {
+  flex: 0 0 auto;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex: 0 0 auto;
+}
