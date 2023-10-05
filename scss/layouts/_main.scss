@@ -1,4 +1,60 @@
 .main {
+    position: relative;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-name {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    font-size: 1.5rem;
+    color: #0bca0b;
+    text-transform: uppercase;
+}
+
+.text {
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+}
+
+.game {
+    width: 50rem;
+    height: 50rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    background: #cccccc;
+
+
 
 }
 
+.cell {
+    width: 17rem;
+    height: 17rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: .2rem 0 .2rem #ff5e00,
+        0 .2rem .2rem #ff5e00,
+        -.2rem 0 .2rem #ff5e00,
+        0 -.2rem .2rem #ff5e00;
+    border: 1rem solid #ffffff;
+    background: #cccccc;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}

@@ -6,10 +6,10 @@
 }
 
 .container--header {
-  min-height: 7rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .container--footer {
@@ -36,6 +36,61 @@
   font-size: 5rem;
   padding-right: 2rem;
   color: #ff5e00;
+}
+
+.main {
+  position: relative;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-name {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  font-size: 1.5rem;
+  color: #0bca0b;
+  text-transform: uppercase;
+}
+
+.text {
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+.game {
+  width: 50rem;
+  height: 50rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  background: #cccccc;
+}
+
+.cell {
+  width: 17rem;
+  height: 17rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: 0.2rem 0 0.2rem #ff5e00, 0 0.2rem 0.2rem #ff5e00, -0.2rem 0 0.2rem #ff5e00, 0 -0.2rem 0.2rem #ff5e00;
+  border: 1rem solid #ffffff;
+  background: #cccccc;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 .footer {
@@ -79,25 +134,34 @@
 }
 
 html {
+  width: 100%;
+  height: 100vh;
   scroll-behavior: smooth;
   font-size: 10px;
-  overflow-x: hidden;
 }
 
 body {
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
   margin: 0;
   background-size: cover;
   font-family: "Roboto", sans-serif;
   font-size: 3rem;
   font-weight: 700;
+  color: #4b4848;
 }
 
 .header {
   flex: 0 0 auto;
+}
+
+h1 {
+  width: 60%;
+  margin: 0;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .main {
@@ -106,4 +170,34 @@ body {
 
 .footer {
   flex: 0 0 auto;
+}
+
+.button {
+  width: 15rem;
+  height: 4rem;
+  background: transparent;
+  border: 0.18rem solid #ff5e00;
+  border-radius: 1rem;
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.button:hover {
+  background: rgba(255, 94, 0, 0.6);
+  color: #ffffff;
+  border: none;
+}
+
+.button__start-game {
+  color: #0bca0b;
+  border: 0.18rem solid #0bca0b;
+}
+.button__start-game:hover {
+  background: rgba(11, 202, 11, 0.6);
+  color: #ffffff;
+  border: none;
 }

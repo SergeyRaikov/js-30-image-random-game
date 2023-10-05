@@ -1,0 +1,32 @@
+.button {
+    width: 15rem;
+    height: 4rem;
+    background: transparent;
+    border: 0.18rem solid #ff5e00;
+    border-radius: 1rem;
+    font-family: inherit;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    cursor: pointer;
+    transition: all .3s linear;
+
+    &:hover {
+        background: rgba(255, 94, 0, 0.6);
+        color: #ffffff;
+        border: none;
+    }
+}
+
+.button__start-game {
+    color: #0bca0b;
+    border: 0.18rem solid #0bca0b;
+
+    &:hover {
+        background: rgba(11, 202, 11, 0.6);
+        ;
+        color: #ffffff;
+        border: none;
+    }
+}
