@@ -28,18 +28,32 @@
 .user-name {
     color: #0bca0b;
 
+
 }
 
 .second-user-name {
     color: #1f6bd6;
 }
 
+.score1 {
+    background: #0bca0b;
+}
+
+.score2 {
+    background: #1f6bd6;
+}
 
 
 .score1,
 .score2 {
-    color: #f75701;
-    margin-left: auto;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    color: #ffffff;
+    margin-left: .5rem;
 }
 
 .text {
