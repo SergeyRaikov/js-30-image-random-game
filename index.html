@@ -10,34 +10,47 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="container container--header">
-            <h1 class="title">The Game "Tic-tac-toe" version of Sergey Raikov 1.0</h1>
-            <button class="button button__start-game">start</button>
-            <button class="button button__reset-game">reset</button>
-        </div>
-    </header>
-    <main class="main">
-        <div class="container">
-            <span class="user-name"></span>
-            <div class="text">to start the game, please press start!</div>
-            <div class="game">
+    <div class="wrapper">
+        <main class="main">
+            <div class="container">
+                <header class="header">
+                    <div class="container container--header">
+                        <h1 class="title">The Game "Tic-tac-toe" version of Sergey Raikov 1.0</h1>
+                        <button class="button button__start-game">start</button>
+                        <button class="button button__reset-game">reset</button>
+                    </div>
+                </header>
+                <div class="tablo">
+                    <div class="tablo__first-player">
+                        <span class="user-name"></span>
+                        <span class="score1"></span>
+                    </div>
+                    <div class="tablo__second-player">
+                        <span class="second-user-name"></span>
+                        <span class="score2"></span>
+                    </div>
 
+
+                </div>
+
+                <div class="text">to start the game, please press start!</div>
+                <div class="game">
+                </div>
 
             </div>
 
-        </div>
+        </main>
+        <footer class="footer">
+            <div class="container container--footer">
+                <div class="copy-right">&copy; Copyright 2023 <a class="developer"
+                        href="https://github.com/SergeyRaikov" target="_blank">SergeyRaikov</a></div>
+                <a class="footer__link" href="https://rs.school/js-stage0/" target="_blank" rel="noopener noreferrer">
+                    <img class="footer__logo" src="./assets/img/logo.svg" alt="RS_SCHOOL-logo">
+                </a>
+            </div>
+        </footer>
+    </div>
 
-    </main>
-    <footer class="footer">
-        <div class="container container--footer">
-            <div class="copy-right">&copy; Copyright 2023 <a class="developer" href="https://github.com/SergeyRaikov"
-                    target="_blank">SergeyRaikov</a></div>
-            <a class="footer__link" href="https://rs.school/js-stage0/" target="_blank" rel="noopener noreferrer">
-                <img class="footer__logo" src="./assets/img/logo.svg" alt="RS_SCHOOL-logo">
-            </a>
-        </div>
-    </footer>
     <script src="https://kit.fontawesome.com/55bc368fcd.js" crossorigin="anonymous"></script>
     <script src="./js/index.js"></script>
 </body>
