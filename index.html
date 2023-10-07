@@ -10,6 +10,29 @@
 </head>
 
 <body>
+    <!-- Модальное окно -->
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Congratulations! <span class="winner-name"></span>, you have won!</h5>
+
+                </div>
+                <div class="modal-body">
+                    <div class="figure">
+                        The winning figure is: <span class="figure-item"></span>
+                    </div>
+                    <div class="move-number">
+                        The victory was won on the 10th move!
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="button"> Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="wrapper">
         <main class="main">
             <div class="container">
@@ -32,6 +55,13 @@
 
 
                 </div>
+                <div class="records">
+                    <div class="best-player">The best player: <span class="best-player-name">Sergey</span></div>
+                    <div class="number-of-games">Number of games played: <span class="games">10</span></div>
+                    <div class="history">Top players:</div>
+                    <ol class="history-list"></ol>
+
+                </div>
 
                 <div class="text">to start the game, please press start!</div>
                 <div class="game">
@@ -51,7 +81,7 @@
         </footer>
     </div>
 
-    <script src="https://kit.fontawesome.com/55bc368fcd.js" crossorigin="anonymous"></script>
+
     <script src="./js/index.js"></script>
 </body>
 

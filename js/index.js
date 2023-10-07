@@ -1,5 +1,3 @@
-window.onload = () => {};
-
 const startBtn = document.querySelector('.button__start-game');
 const resetBtn = document.querySelector('.button__reset-game');
 const tablo = document.querySelector('.tablo');
@@ -9,6 +7,14 @@ const userScore = document.querySelector('.score1');
 const secondUserScore = document.querySelector('.score2');
 const text = document.querySelector('.text');
 const gameField = document.querySelector('.game');
+const modal = document.querySelector('.modal');
+const closeBtn = document.querySelector('.button');
+const body = document.querySelector('body');
+const winnerNameNode = document.querySelector('.winner-name');
+const winnerFigureNode = document.querySelector('.figure-item');
+const moveNumberNode = document.querySelector('.move-number');
+const historyListNode = document.querySelector('.history-list');
+const amountOfGames = document.querySelector('.games')
 
 let motion = 0;
 let cells;
@@ -16,6 +22,8 @@ let user;
 let secondUser;
 let userScoreCount = 0;
 let secondPlayerScoreCount = 0;
+let winner;
+let winFigure;
 let winnerItem;
 const winnersList = [];
 
@@ -38,7 +46,7 @@ const renderUserName = () => {
   userName.textContent = `${user}: `;
   userScore.textContent = userScoreCount;
   secondUser = prompt(`Enter second plaeyr's name, please!`);
-  secondUserName.textContent = `${secondUser}: `;
+  secondUserName.textContent = `${secondUser}`;
   secondUserScore.textContent = secondPlayerScoreCount;
 };
 const changeScore = () => {
@@ -81,6 +89,20 @@ const add0isWinner = () => {
 const saveGameResults = () => {
   localStorage.setItem('results10', JSON.stringify(winnersList));
 };
+const renderModalContent = () => {
+  winnerFigureNode.textContent = `  ${winFigure} !`;
+  moveNumberNode.textContent = `The victory was won on the  ${motion}  move!`;
+  winnerNameNode.textContent = `  ${winner}  `;
+};
+const showModal = () => {
+  renderModalContent();
+  modal.classList.add('show');
+  body.classList.add('not-scroll');
+};
+const closeModal = () => {
+  modal.classList.remove('show');
+  body.classList.add('not-scroll');
+};
 const checkWinner = () => {
   if (
     cells[0].innerHTML === 'x' &&
@@ -88,12 +110,13 @@ const checkWinner = () => {
     cells[2].innerHTML === 'x'
   ) {
     userScoreCount++;
+    winner = user;
+    winFigure = 'X';
+    console.log(winner);
     playWin();
-    alert(
-      `The winner is ${user}, who played for 'X'! The game consisted of ${motion} moves`
-    );
+    showModal();
     addXisWinner();
-    resetGame()
+    resetGame();
   }
 
   if (
@@ -102,12 +125,13 @@ const checkWinner = () => {
     cells[5].innerHTML === 'x'
   ) {
     userScoreCount++;
+    winner = user;
+    winFigure = 'X';
+    console.log(winner);
     playWin();
-    alert(
-      `The winner is ${user}, who played for 'X'! The game consisted of ${motion} moves`
-    );
+    showModal();
     addXisWinner();
-    resetGame()
+    resetGame();
   }
   if (
     cells[6].innerHTML === 'x' &&
@@ -115,12 +139,13 @@ const checkWinner = () => {
     cells[8].innerHTML === 'x'
   ) {
     userScoreCount++;
+    winner = user;
+    winFigure = 'X';
+    console.log(winner);
     playWin();
-    alert(
-      `The winner is ${user}, who played for 'X'! The game consisted of ${motion} moves`
-    );
+    showModal();
     addXisWinner();
-    resetGame()
+    resetGame();
   }
   if (
     cells[0].innerHTML === 'x' &&
@@ -128,12 +153,13 @@ const checkWinner = () => {
     cells[8].innerHTML === 'x'
   ) {
     userScoreCount++;
+    winner = user;
+    winFigure = 'X';
+    console.log(winner);
     playWin();
-    alert(
-      `The winner is ${user}, who played for 'X'! The game consisted of ${motion} moves`
-    );
+    showModal();
     addXisWinner();
-    resetGame()
+    resetGame();
   }
   if (
     cells[2].innerHTML === 'x' &&
@@ -141,12 +167,13 @@ const checkWinner = () => {
     cells[6].innerHTML === 'x'
   ) {
     userScoreCount++;
+    winner = user;
+    winFigure = 'X';
+    console.log(winner);
     playWin();
-    alert(
-      `The winner is ${user}, who played for 'X'! The game consisted of ${motion} moves`
-    );
+    showModal();
     addXisWinner();
-    resetGame()
+    resetGame();
   }
   if (
     cells[0].innerHTML === 'x' &&
@@ -154,12 +181,13 @@ const checkWinner = () => {
     cells[6].innerHTML === 'x'
   ) {
     userScoreCount++;
+    winner = user;
+    winFigure = 'X';
+    console.log(winner);
     playWin();
-    alert(
-      `The winner is ${user}, who played for 'X'! The game consisted of ${motion} moves`
-    );
+    showModal();
     addXisWinner();
-    resetGame()
+    resetGame();
   }
 
   if (
@@ -168,12 +196,13 @@ const checkWinner = () => {
     cells[7].innerHTML === 'x'
   ) {
     userScoreCount++;
+    winner = user;
+    winFigure = 'X';
+    console.log(winner);
     playWin();
-    alert(
-      `The winner is ${user}, who played for 'X'! The game consisted of ${motion} moves`
-    );
+    showModal();
     addXisWinner();
-    resetGame()
+    resetGame();
   }
   if (
     cells[2].innerHTML === 'x' &&
@@ -181,12 +210,12 @@ const checkWinner = () => {
     cells[8].innerHTML === 'x'
   ) {
     userScoreCount++;
+    winner = user;
+    winFigure = 'X';
     playWin();
-    alert(
-      `The winner is ${user}, who played for 'X'! The game consisted of ${motion} moves`
-    );
+    showModal();
     addXisWinner();
-    resetGame()
+    resetGame();
   }
 
   // 0 win
@@ -198,11 +227,11 @@ const checkWinner = () => {
   ) {
     secondPlayerScoreCount++;
     playWin();
-    alert(
-      `The winner is ${secondUser}, who played for '0'! the game consisted of ${motion} moves`
-    );
+    winner = secondUser;
+    winFigure = '0';
+    showModal();
     add0isWinner();
-    resetGame()
+    resetGame();
   }
   if (
     cells[3].innerHTML === 'o' &&
@@ -211,11 +240,11 @@ const checkWinner = () => {
   ) {
     secondPlayerScoreCount++;
     playWin();
-    alert(
-      `The winner is ${secondUser}, who played for '0'! the game consisted of ${motion} moves`
-    );
+    winner = secondUser;
+    winFigure = '0';
+    showModal();
     add0isWinner();
-    resetGame()
+    resetGame();
   }
   if (
     cells[6].innerHTML === 'o' &&
@@ -224,11 +253,11 @@ const checkWinner = () => {
   ) {
     secondPlayerScoreCount++;
     playWin();
-    alert(
-      `The winner is ${secondUser}, who played for '0'! the game consisted of ${motion} moves`
-    );
+    winner = secondUser;
+    winFigure = '0';
+    showModal();
     add0isWinner();
-    resetGame()
+    resetGame();
   }
   if (
     cells[0].innerHTML === 'o' &&
@@ -237,11 +266,11 @@ const checkWinner = () => {
   ) {
     secondPlayerScoreCount++;
     playWin();
-    alert(
-      `The winner is ${secondUser}, who played for '0'! the game consisted of ${motion} moves`
-    );
+    winner = secondUser;
+    winFigure = '0';
+    showModal();
     add0isWinner();
-    resetGame()
+    resetGame();
   }
   if (
     cells[2].innerHTML === 'o' &&
@@ -250,11 +279,11 @@ const checkWinner = () => {
   ) {
     secondPlayerScoreCount++;
     playWin();
-    alert(
-      `The winner is ${secondUser}, who played for '0'! the game consisted of ${motion} moves`
-    );
+    winner = secondUser;
+    winFigure = '0';
+    showModal();
     add0isWinner();
-    resetGame()
+    resetGame();
   }
   if (
     cells[0].innerHTML === 'o' &&
@@ -263,11 +292,11 @@ const checkWinner = () => {
   ) {
     secondPlayerScoreCount++;
     playWin();
-    alert(
-      `The winner is ${secondUser}, who played for '0'! the game consisted of ${motion} moves`
-    );
+    winner = secondUser;
+    winFigure = '0';
+    showModal();
     add0isWinner();
-    resetGame()
+    resetGame();
   }
   if (
     cells[1].innerHTML === 'o' &&
@@ -276,11 +305,11 @@ const checkWinner = () => {
   ) {
     secondPlayerScoreCount++;
     playWin();
-    alert(
-      `The winner is ${secondUser}, who played for '0'! the game consisted of ${motion} moves`
-    );
+    winner = secondUser;
+    winFigure = '0';
+    showModal();
     add0isWinner();
-    resetGame()
+    resetGame();
   }
   if (
     cells[2].innerHTML === 'o' &&
@@ -289,15 +318,29 @@ const checkWinner = () => {
   ) {
     secondPlayerScoreCount++;
     playWin();
-    alert(
-      `The winner is ${secondUser}, who played for '0'! the game consisted of ${motion} moves`
-    );
+    winner = secondUser;
+    winFigure = '0';
+    showModal();
     add0isWinner();
-    resetGame()
+    resetGame();
   }
   changeScore();
   saveGameResults();
 };
+//ЗАКОНЧИТЬ !!!!!!!!!!
+const showRecords = () => {
+  const dataRecords = JSON.parse(localStorage.getItem('results10'));
+  const totalGames = dataRecords !== null ? dataRecords.length : 0;
+  amountOfGames.textContent = ` ${totalGames} `
+  if (dataRecords) {
+    dataRecords.forEach((players, index) => {
+      historyListNode.innerHTML += `<li class = "history-list-item"> ${players.winner}</li>`;
+    });
+  }
+  console.log(totalGames);
+};
+
+showRecords();
 
 startBtn.addEventListener('click', startGame);
 resetBtn.addEventListener('click', resetGame);
@@ -318,4 +361,4 @@ gameField.addEventListener('click', (event) => {
     }
   }
 });
-
+closeBtn.addEventListener('click', closeModal);
