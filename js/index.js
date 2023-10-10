@@ -14,7 +14,7 @@ const winnerNameNode = document.querySelector('.winner-name');
 const winnerFigureNode = document.querySelector('.figure-item');
 const moveNumberNode = document.querySelector('.move-number');
 const historyListNode = document.querySelector('.history-list');
-const amountOfGames = document.querySelector('.games')
+const amountOfGames = document.querySelector('.games');
 
 let motion = 0;
 let cells;
@@ -79,16 +79,19 @@ const resetGame = () => {
 const addXisWinner = () => {
   const winnerItem = new Object();
   winnerItem.winner = user;
+  winnerItem.move = motion;
   if (winnersList.length < 10) winnersList.push(winnerItem);
 };
 const add0isWinner = () => {
   const winnerItem = new Object();
   winnerItem.winner = secondUserName.textContent;
+  winnerItem.move = motion;
   if (winnersList.length < 10) winnersList.push(winnerItem);
 };
 const saveGameResults = () => {
   localStorage.setItem('results10', JSON.stringify(winnersList));
 };
+// saveGameResults();
 const renderModalContent = () => {
   winnerFigureNode.textContent = `  ${winFigure} !`;
   moveNumberNode.textContent = `The victory was won on the  ${motion}  move!`;
@@ -112,7 +115,6 @@ const checkWinner = () => {
     userScoreCount++;
     winner = user;
     winFigure = 'X';
-    console.log(winner);
     playWin();
     showModal();
     addXisWinner();
@@ -127,7 +129,6 @@ const checkWinner = () => {
     userScoreCount++;
     winner = user;
     winFigure = 'X';
-    console.log(winner);
     playWin();
     showModal();
     addXisWinner();
@@ -141,7 +142,6 @@ const checkWinner = () => {
     userScoreCount++;
     winner = user;
     winFigure = 'X';
-    console.log(winner);
     playWin();
     showModal();
     addXisWinner();
@@ -155,7 +155,6 @@ const checkWinner = () => {
     userScoreCount++;
     winner = user;
     winFigure = 'X';
-    console.log(winner);
     playWin();
     showModal();
     addXisWinner();
@@ -169,7 +168,6 @@ const checkWinner = () => {
     userScoreCount++;
     winner = user;
     winFigure = 'X';
-    console.log(winner);
     playWin();
     showModal();
     addXisWinner();
@@ -183,7 +181,6 @@ const checkWinner = () => {
     userScoreCount++;
     winner = user;
     winFigure = 'X';
-    console.log(winner);
     playWin();
     showModal();
     addXisWinner();
@@ -198,7 +195,6 @@ const checkWinner = () => {
     userScoreCount++;
     winner = user;
     winFigure = 'X';
-    console.log(winner);
     playWin();
     showModal();
     addXisWinner();
@@ -327,17 +323,16 @@ const checkWinner = () => {
   changeScore();
   saveGameResults();
 };
-//ЗАКОНЧИТЬ !!!!!!!!!!
+
 const showRecords = () => {
   const dataRecords = JSON.parse(localStorage.getItem('results10'));
   const totalGames = dataRecords !== null ? dataRecords.length : 0;
-  amountOfGames.textContent = ` ${totalGames} `
+  amountOfGames.textContent = ` ${totalGames} `;
   if (dataRecords) {
     dataRecords.forEach((players, index) => {
-      historyListNode.innerHTML += `<li class = "history-list-item"> ${players.winner}</li>`;
+      historyListNode.innerHTML += `<li class = "history-list-item"> ${players.winner} won on ${players.move} move</li>`;
     });
   }
-  console.log(totalGames);
 };
 
 showRecords();

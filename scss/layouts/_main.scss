@@ -62,6 +62,13 @@
     left: 1.5rem;
     font-size: 1.5rem;
 
+    @media (max-width: 768px) {
+        width: 10rem;
+        left: 2.5rem;
+        font-size: 1rem;
+
+    }
+
 }
 
 .text {
@@ -82,9 +89,6 @@
     align-items: center;
     justify-content: center;
     background: #cccccc;
-
-
-
 }
 
 .cell {
@@ -109,8 +113,13 @@
     display: none;
 }
 
-.history-list-item{
+.history-list {
+    @media (max-width: 768px) {
+        padding: 0;
+    }
+}
+
+.history-list-item {
     padding-left: 1rem;
     padding-bottom: 1rem;
 }
-
