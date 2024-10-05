@@ -42,10 +42,14 @@ const getCells = () => {
 };
 
 const renderUserName = () => {
-  user = prompt('Enter your name, please!');
+  user = prompt('Enter your name, please!') !== '' ? user : 'Player_1';
   userName.textContent = `${user}: `;
+
   userScore.textContent = userScoreCount;
-  secondUser = prompt(`Enter second plaeyr's name, please!`);
+  secondUser =
+    prompt(`Enter second plaeyr's name, please!`) !== ''
+      ? secondUser
+      : 'Player_2';
   secondUserName.textContent = `${secondUser}`;
   secondUserScore.textContent = secondPlayerScoreCount;
 };
